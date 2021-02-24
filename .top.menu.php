@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Блог", 
+		"", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"News", 
+		"/news.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Фото", 
+		"photo/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		"contacts.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Обо мне", 
+		"about.php", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>
