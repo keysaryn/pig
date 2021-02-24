@@ -2,7 +2,7 @@
 $aMenuLinks = Array(
 	Array(
 		"Блог", 
-		"", 
+		"/index.php", 
 		Array(), 
 		Array(), 
 		"" 
