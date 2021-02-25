@@ -7,7 +7,7 @@ $APPLICATION->SetTitle("Video");
 	"detail_video", 
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"ADD_ELEMENT_CHAIN" => "N",
+		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
@@ -39,7 +39,7 @@ $APPLICATION->SetTitle("Video");
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
 		"MEDIA_PROPERTY" => "",
 		"MESSAGE_404" => "",
-		"META_DESCRIPTION" => "-",
+		"META_DESCRIPTION" => "video",
 		"META_KEYWORDS" => "-",
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"PAGER_SHOW_ALL" => "N",
@@ -63,7 +63,7 @@ $APPLICATION->SetTitle("Video");
 		"TEMPLATE_THEME" => "blue",
 		"USE_PERMISSIONS" => "N",
 		"USE_SHARE" => "N",
-		"PAGER_BASE_LINK" => "/detail.php",
+		"PAGER_BASE_LINK" => "/detail.php?id=#ELEMENT_ID#",
 		"PAGER_PARAMS_NAME" => "arrPager"
 	),
 	false

@@ -111,14 +111,14 @@ $this->setFrameMode(true);
 while($ar=$rs->GetNext())
 { $page[] = $ar["ID"]; }?>
         <?if (count($page) == 2 && $arResult["ID"] == $page[0]):?>
-        <a href="/videos/detail.php?id=#ELEMENT_ID#<?=$page[1]?>/">Предыдущая</a>
+        <a href="/videos/detail.php?id=<?=$page[1]?>">Предыдущая</a>
 
         <?elseif (count($page) == 3):?>
-        <a href="//<?=$page[0]?>/">Следующая</a>
+        <a href="/videos/detail.php?id=<?=$page[0]?>">Следующая</a>
 
-        <a href="//<?=$page[2]?>/">Предыдущая</a>
+        <a href="/videos/detail.php?id=<?=$page[2]?>">Предыдущая</a>
 
         <?elseif (count($page) == 2 && $arResult["ID"] == $page[1]):?>
-        <a href="/путь для ЧПУ/<?=$page[0]?>/">Следующая</a>
+        <a href="/videos/detail.php?id=<?=$page[0]?>">Следующая</a>
         <?endif;?>
 </div>
