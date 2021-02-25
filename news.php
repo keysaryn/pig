@@ -2,7 +2,10 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("description", "for boys");
 $APPLICATION->SetTitle("News");
-?><?$APPLICATION->IncludeComponent(
+?>
+ <div class="row">
+  <div class="col-sm-10">
+  	<?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"bootstrap_v6",
 	Array(
@@ -68,8 +71,12 @@ $APPLICATION->SetTitle("News");
 		"USE_RATING" => "N",
 		"USE_SHARE" => "N"
 	)
-);?><?$APPLICATION->IncludeComponent("bitrix:menu", "personal_left1", Array(
-	"ALLOW_MULTI_SELECT" => "Y",	// Разрешить несколько активных пунктов одновременно
+	
+	);?>
+  </div>
+  <div class="col-sm-2">
+  	<?$APPLICATION->IncludeComponent("bitrix:menu", "personal_left1", Array(
+		"ALLOW_MULTI_SELECT" => "Y",	// Разрешить несколько активных пунктов одновременно
 		"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
 		"DELAY" => "N",	// Откладывать выполнение шаблона меню
 		"MAX_LEVEL" => "1",	// Уровень вложенности меню
@@ -81,6 +88,10 @@ $APPLICATION->SetTitle("News");
 		"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
 		"COMPONENT_TEMPLATE" => "personal_left",
 		"MENU_THEME" => "site"
-	),
-	false
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+		),
+		false
+	);?>
+  </div>
+</div> 
+
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

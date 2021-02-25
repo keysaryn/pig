@@ -3,9 +3,9 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Video");
 ?><div>
 	 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.detail", 
-	"detail_video", 
-	array(
+	"bitrix:news.detail",
+	"detail_video",
+	Array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -29,10 +29,7 @@ $APPLICATION->SetTitle("Video");
 		"DISPLAY_TOP_PAGER" => "N",
 		"ELEMENT_CODE" => "",
 		"ELEMENT_ID" => $_REQUEST["id"],
-		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
+		"FIELD_CODE" => array(0=>"",1=>"",),
 		"IBLOCK_ID" => "2",
 		"IBLOCK_TYPE" => "videos",
 		"IBLOCK_URL" => "",
@@ -41,15 +38,13 @@ $APPLICATION->SetTitle("Video");
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "video",
 		"META_KEYWORDS" => "-",
+		"PAGER_BASE_LINK" => "/detail.php?id=#ELEMENT_ID#",
 		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_PARAMS_NAME" => "arrPager",
 		"PAGER_SHOW_ALL" => "N",
 		"PAGER_TEMPLATE" => "bootstrap_v4",
 		"PAGER_TITLE" => "Страница",
-		"PROPERTY_CODE" => array(
-			0 => "video",
-			1 => "Duration",
-			2 => "",
-		),
+		"PROPERTY_CODE" => array(0=>"video",1=>"Duration",2=>"",),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_CANONICAL_URL" => "N",
 		"SET_LAST_MODIFIED" => "N",
@@ -62,36 +57,52 @@ $APPLICATION->SetTitle("Video");
 		"STRICT_SECTION_CHECK" => "N",
 		"TEMPLATE_THEME" => "blue",
 		"USE_PERMISSIONS" => "N",
-		"USE_SHARE" => "N",
-		"PAGER_BASE_LINK" => "/detail.php?id=#ELEMENT_ID#",
-		"PAGER_PARAMS_NAME" => "arrPager"
-	),
-	false
+		"USE_SHARE" => "N"
+	)
 );?>
 </div>
 <div>
-	 <?$APPLICATION->IncludeComponent("bitrix:news.line", "template1", Array(
-	"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
-		"CACHE_GROUPS" => "Y",	// Учитывать права доступа
-		"CACHE_TIME" => "300",	// Время кеширования (сек.)
-		"CACHE_TYPE" => "A",	// Тип кеширования
-		"DETAIL_URL" => "detail.php?id=#ELEMENT_ID#",	// URL, ведущий на страницу с содержимым элемента раздела
-		"FIELD_CODE" => array(	// Поля
-			0 => "ID",
-			1 => "PREVIEW_PICTURE",
-			2 => "",
-		),
-		"IBLOCKS" => array(	// Код информационного блока
-			0 => "2",
-		),
-		"IBLOCK_TYPE" => "videos",	// Тип информационного блока
-		"NEWS_COUNT" => "20",	// Количество новостей на странице
-		"SORT_BY1" => "ACTIVE_FROM",	// Поле для первой сортировки новостей
-		"SORT_BY2" => "SORT",	// Поле для второй сортировки новостей
-		"SORT_ORDER1" => "DESC",	// Направление для первой сортировки новостей
-		"SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
-		"COMPONENT_TEMPLATE" => ".default"
-	),
-	false
+	 <?$APPLICATION->IncludeComponent(
+	"bitrix:news.line",
+	"template1",
+	Array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "300",
+		"CACHE_TYPE" => "A",
+		"COMPONENT_TEMPLATE" => ".default",
+		"DETAIL_URL" => "detail.php?id=#ELEMENT_ID#",
+		"FIELD_CODE" => array(0=>"ID",1=>"PREVIEW_PICTURE",2=>"",),
+		"IBLOCKS" => array(0=>"2",),
+		"IBLOCK_TYPE" => "videos",
+		"NEWS_COUNT" => "20",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC"
+	)
 );?>
-</div><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+</div>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:iblock.tv",
+	"template1",
+	Array(
+		"ALLOW_SWF" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "3600",
+		"CACHE_TYPE" => "A",
+		"DEFAULT_BIG_IMAGE" => "/bitrix/components/bitrix/iblock.tv/templates/.default/images/default_big.png",
+		"DEFAULT_SMALL_IMAGE" => "/bitrix/components/bitrix/iblock.tv/templates/.default/images/default_small.png",
+		"DURATION" => "11",
+		"HEIGHT" => "300",
+		"IBLOCK_ID" => "2",
+		"IBLOCK_TYPE" => "videos",
+		"LOGO" => "/bitrix/components/bitrix/iblock.tv/templates/.default/images/logo.png",
+		"PATH_TO_FILE" => "9",
+		"SECTION_ID" => "",
+		"SHOW_COUNTER_EVENT" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_ORDER1" => "DESC",
+		"WIDTH" => "400"
+	)
+);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
