@@ -11,3 +11,9 @@ div.news-detail img.detail_picture
 {
 	color:#486DAA;
 }
+.next-button
+{
+	display: flex;
+	height: 100%;
+	align-items: flex-end;
+}

@@ -3,9 +3,9 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Video");
 ?><div>
 	 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.detail", 
-	"detail_video", 
-	array(
+	"bitrix:news.detail",
+	"detail_video",
+	Array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -29,10 +29,7 @@ $APPLICATION->SetTitle("Video");
 		"DISPLAY_TOP_PAGER" => "N",
 		"ELEMENT_CODE" => "",
 		"ELEMENT_ID" => $_REQUEST["id"],
-		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
+		"FIELD_CODE" => array(0=>"",1=>"",),
 		"IBLOCK_ID" => "2",
 		"IBLOCK_TYPE" => "videos",
 		"IBLOCK_URL" => "",
@@ -47,10 +44,7 @@ $APPLICATION->SetTitle("Video");
 		"PAGER_SHOW_ALL" => "N",
 		"PAGER_TEMPLATE" => "bootstrap_v4",
 		"PAGER_TITLE" => "Страница",
-		"PROPERTY_CODE" => array(
-			0 => "video",
-			1 => "",
-		),
+		"PROPERTY_CODE" => array(0=>"video",1=>"",),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_CANONICAL_URL" => "N",
 		"SET_LAST_MODIFIED" => "N",
@@ -64,30 +58,9 @@ $APPLICATION->SetTitle("Video");
 		"TEMPLATE_THEME" => "blue",
 		"USE_PERMISSIONS" => "N",
 		"USE_SHARE" => "N"
-	),
-	false
-);?>
-</div>
-<div>
-	 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.line",
-	"template1",
-	Array(
-		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "300",
-		"CACHE_TYPE" => "A",
-		"COMPONENT_TEMPLATE" => ".default",
-		"DETAIL_URL" => "detail.php?id=#ELEMENT_ID#",
-		"FIELD_CODE" => array(0=>"ID",1=>"PREVIEW_PICTURE",2=>"",),
-		"IBLOCKS" => array(0=>"2",),
-		"IBLOCK_TYPE" => "videos",
-		"NEWS_COUNT" => "20",
-		"SORT_BY1" => "ACTIVE_FROM",
-		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC"
 	)
 );?>
 </div>
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<div>
+</div>
+ <br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

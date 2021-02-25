@@ -57,7 +57,7 @@ while($ar=$rs->GetNext())
     <br />
 
     <div class="row">
-        <div class="col-sm-2">
+        <div class="col-sm-2 align-self-end">
             <?if ((count($page) == 2 && $arResult["ID"] == $page[0]) || (count($page) == 3)):?>
             <a href="/videos/detail.php?id=<?=$page[1]?>">Предыдущее видео</a>
             <?endif;?>
@@ -94,7 +94,7 @@ while($ar=$rs->GetNext())
             <br />
             <?endforeach; ?>
         </div>
-        <div class="col-sm-2">
+        <div class="col-sm-2 align-self-end">
             <?if ((count($page) == 2 && $arResult["ID"] == $page[1]) || (count($page) == 3)):?>
             <a href="/videos/detail.php?id=<?=$page[0]?>">Следующее видео</a>
             <?endif;?>
@@ -127,7 +127,7 @@ while($ar=$rs->GetNext())
     <?
 	}
 	?>
-    <div class="row">
+    <div class="row" style="margin-top: 20px;">
         <div class="col-sm-12">
             <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
