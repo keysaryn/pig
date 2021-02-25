@@ -6,9 +6,9 @@ $APPLICATION->SetTitle("News");
  <div class="row">
   <div class="col-sm-10">
   	<?$APPLICATION->IncludeComponent(
-	"bitrix:news.list",
-	"bootstrap_v6",
-	Array(
+	"bitrix:news.list", 
+	"bootstrap_v6", 
+	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
@@ -29,7 +29,10 @@ $APPLICATION->SetTitle("News");
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "Y",
-		"FIELD_CODE" => array(0=>"DATE_CREATE",1=>"",),
+		"FIELD_CODE" => array(
+			0 => "DATE_CREATE",
+			1 => "",
+		),
 		"FILE_404" => "",
 		"FILTER_NAME" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
@@ -49,10 +52,15 @@ $APPLICATION->SetTitle("News");
 		"PAGER_SHOW_ALWAYS" => "Y",
 		"PAGER_TEMPLATE" => "bootstrap_v4",
 		"PAGER_TITLE" => "Видео",
-		"PARENT_SECTION" => "2",
+		"PARENT_SECTION" => "",
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => array(0=>"Duration",1=>"DURATION",2=>"DESCRIPTION",3=>"",),
+		"PROPERTY_CODE" => array(
+			0 => "Duration",
+			1 => "DURATION",
+			2 => "DESCRIPTION",
+			3 => "",
+		),
 		"SEARCH_PAGE" => "/search/",
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_LAST_MODIFIED" => "Y",
@@ -70,9 +78,9 @@ $APPLICATION->SetTitle("News");
 		"TEMPLATE_THEME" => "blue",
 		"USE_RATING" => "N",
 		"USE_SHARE" => "N"
-	)
-	
-	);?>
+	),
+	false
+);?>
   </div>
   <div class="col-sm-2">
   	<?$APPLICATION->IncludeComponent("bitrix:menu", "personal_left1", Array(

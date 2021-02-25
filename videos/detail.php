@@ -3,9 +3,9 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Video");
 ?><div>
 	 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.detail",
-	"detail_video",
-	Array(
+	"bitrix:news.detail", 
+	"detail_video", 
+	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -29,7 +29,10 @@ $APPLICATION->SetTitle("Video");
 		"DISPLAY_TOP_PAGER" => "N",
 		"ELEMENT_CODE" => "",
 		"ELEMENT_ID" => $_REQUEST["id"],
-		"FIELD_CODE" => array(0=>"",1=>"",),
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"IBLOCK_ID" => "2",
 		"IBLOCK_TYPE" => "videos",
 		"IBLOCK_URL" => "",
@@ -44,7 +47,10 @@ $APPLICATION->SetTitle("Video");
 		"PAGER_SHOW_ALL" => "N",
 		"PAGER_TEMPLATE" => "bootstrap_v4",
 		"PAGER_TITLE" => "Страница",
-		"PROPERTY_CODE" => array(0=>"video",1=>"Duration",2=>"",),
+		"PROPERTY_CODE" => array(
+			0 => "video",
+			1 => "",
+		),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_CANONICAL_URL" => "N",
 		"SET_LAST_MODIFIED" => "N",
@@ -58,7 +64,8 @@ $APPLICATION->SetTitle("Video");
 		"TEMPLATE_THEME" => "blue",
 		"USE_PERMISSIONS" => "N",
 		"USE_SHARE" => "N"
-	)
+	),
+	false
 );?>
 </div>
 <div>
@@ -83,26 +90,4 @@ $APPLICATION->SetTitle("Video");
 	)
 );?>
 </div>
-<?$APPLICATION->IncludeComponent(
-	"bitrix:iblock.tv",
-	"template1",
-	Array(
-		"ALLOW_SWF" => "N",
-		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "3600",
-		"CACHE_TYPE" => "A",
-		"DEFAULT_BIG_IMAGE" => "/bitrix/components/bitrix/iblock.tv/templates/.default/images/default_big.png",
-		"DEFAULT_SMALL_IMAGE" => "/bitrix/components/bitrix/iblock.tv/templates/.default/images/default_small.png",
-		"DURATION" => "11",
-		"HEIGHT" => "300",
-		"IBLOCK_ID" => "2",
-		"IBLOCK_TYPE" => "videos",
-		"LOGO" => "/bitrix/components/bitrix/iblock.tv/templates/.default/images/logo.png",
-		"PATH_TO_FILE" => "9",
-		"SECTION_ID" => "",
-		"SHOW_COUNTER_EVENT" => "N",
-		"SORT_BY1" => "ACTIVE_FROM",
-		"SORT_ORDER1" => "DESC",
-		"WIDTH" => "400"
-	)
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
