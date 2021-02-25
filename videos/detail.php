@@ -70,28 +70,26 @@ $APPLICATION->SetTitle("Video");
 );?>
 </div>
 <div>
-	 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.line", 
-	".default", 
-	array(
-		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "300",
-		"CACHE_TYPE" => "A",
-		"DETAIL_URL" => "videos/detail.php?id=#ELEMENT_ID#",
-		"FIELD_CODE" => array(
+	 <?$APPLICATION->IncludeComponent("bitrix:news.line", "template1", Array(
+	"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
+		"CACHE_GROUPS" => "Y",	// Учитывать права доступа
+		"CACHE_TIME" => "300",	// Время кеширования (сек.)
+		"CACHE_TYPE" => "A",	// Тип кеширования
+		"DETAIL_URL" => "detail.php?id=#ELEMENT_ID#",	// URL, ведущий на страницу с содержимым элемента раздела
+		"FIELD_CODE" => array(	// Поля
 			0 => "ID",
-			1 => "",
+			1 => "PREVIEW_PICTURE",
+			2 => "",
 		),
-		"IBLOCKS" => array(
+		"IBLOCKS" => array(	// Код информационного блока
 			0 => "2",
 		),
-		"IBLOCK_TYPE" => "videos",
-		"NEWS_COUNT" => "20",
-		"SORT_BY1" => "ACTIVE_FROM",
-		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC",
+		"IBLOCK_TYPE" => "videos",	// Тип информационного блока
+		"NEWS_COUNT" => "20",	// Количество новостей на странице
+		"SORT_BY1" => "ACTIVE_FROM",	// Поле для первой сортировки новостей
+		"SORT_BY2" => "SORT",	// Поле для второй сортировки новостей
+		"SORT_ORDER1" => "DESC",	// Направление для первой сортировки новостей
+		"SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
 		"COMPONENT_TEMPLATE" => ".default"
 	),
 	false
